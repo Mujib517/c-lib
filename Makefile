@@ -1,11 +1,14 @@
-output: prime.o main.o
-	gcc main.o prime.o -o output
+$(CC) = gcc
+ODIR = obj
+
+output: main.o stack.o
+	$(CC) main.o stack.o -o output
 
 main.o: main.c
-	gcc -c main.c
+	$(CC) -c main.c
 
-prime.o: prime.c prime.h
-	gcc -c prime.c
+stack.o: stack.c stack.h
+	$(CC) -c stack.c
 
 clean:
 	rm *.o output
