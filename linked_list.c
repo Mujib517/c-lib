@@ -58,3 +58,18 @@ void print()
         temp = temp->next;
     }
 }
+
+void print_reverse_recursive(struct Node *nd)
+{
+    if (nd == NULL)
+        return;
+
+    print_reverse_recursive(nd->next);
+    printf("%d\n", nd->data);
+}
+
+void print_reverse()
+{
+    struct Node *temp = head;
+    print_reverse_recursive(temp);
+}
