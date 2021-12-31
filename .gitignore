@@ -4,3 +4,6 @@
 # generated
 *.o
 output
+
+# images
+*.ppm
